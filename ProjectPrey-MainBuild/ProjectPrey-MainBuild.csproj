@@ -284,10 +284,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Cd_FieldGeneration.cs" />
+    <Compile Include="Assets\Cd_PreySearch.cs" />
+    <Compile Include="Assets\Cd_PreySpread.cs" />
     <Compile Include="Assets\Scripts\Cd_Cursor_Movement.cs" />
     <Compile Include="Assets\Scripts\Cd_Hero_Movement.cs" />
     <Compile Include="Assets\Scripts\Cd_MainGame.cs" />
     <Compile Include="Assets\Scripts\Cd_PointerScript.cs" />
+    <Compile Include="Assets\Scripts\Cd_PreyBetas.cs" />
+    <Compile Include="Assets\Scripts\Patrol.cs" />
+    <Compile Include="Assets\Scripts\Patrol2Point.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -7,7 +7,6 @@ public class Patrol : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject parent;
     public Cd_PreyBetas beta;
-    public float speed;
     private float waitTime;
     public float startWaitTime;
     public Transform moveSpot;

@@ -35,8 +35,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4763099304596662}
-  - component: {fileID: 114830363972111208}
   - component: {fileID: 61653511776815552}
+  - component: {fileID: 50081522023877204}
   - component: {fileID: 114560084326795432}
   m_Layer: 0
   m_Name: ScaredPrey
@@ -51,14 +51,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313912506724160}
-  m_LocalRotation: {x: -0, y: -0, z: -0.3357663, w: 0.9419453}
-  m_LocalPosition: {x: -4.24, y: 3.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.76, y: 2.95, z: -0.35}
   m_LocalScale: {x: 2.5884352, y: 2.0985599, z: 1}
   m_Children:
   - {fileID: 4864909078105354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -39.238003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4864909078105354
 Transform:
   m_ObjectHideFlags: 1
@@ -72,6 +72,26 @@ Transform:
   m_Father: {fileID: 4763099304596662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50081522023877204
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313912506724160}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61653511776815552
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -81,7 +101,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -111,20 +131,8 @@ MonoBehaviour:
   retreatDistance: 4
   speed: 2
   player: {fileID: 0}
---- !u!114 &114830363972111208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1313912506724160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba8bddc337d2ae4082f1e944790ebd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  growth: 0
-  growthSpeed: 0.01
-  sprite: {fileID: 212415296494791862}
+  detectedsmell: 0
+  detectedsight: 0
 --- !u!212 &212415296494791862
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,6 +7,8 @@ public class EnemyRetreat : MonoBehaviour {
     public float retreatDistance;
     public float speed;
     public Transform player;
+    public bool detectedsmell = false;
+    public bool detectedsight = false;
 	// Use this for initialization
 
 	void Start () {
@@ -17,9 +19,10 @@ public class EnemyRetreat : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+        if (detectedsight||detectedsmell)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            
         }
                 
                

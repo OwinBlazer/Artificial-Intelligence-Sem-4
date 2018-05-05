@@ -239,7 +239,7 @@ public class Cd_PreyBetas : MonoBehaviour {
             }
             else
             {
-            if (runTimer > 0) { runTimer -= Time.deltaTime; }
+            if (runTimer > 0) { runTimer -= Time.deltaTime; rb.velocity = new Vector2(direction.x, direction.y) * speed * Time.deltaTime; }
             else
             {
                 //script untuk lari, wall belum ter-detect

@@ -9,6 +9,7 @@ public class Cd_PreyBetas : MonoBehaviour {
     public float hunger = 50;
     public float hungerDepletionRate=1;
     public float age = 0;
+    public float ageDepletionRate = 0.2f;
     bool detectSmell = false;
     bool detectSight = false;
     public Rigidbody2D rb;
@@ -24,10 +25,16 @@ public class Cd_PreyBetas : MonoBehaviour {
     public int MateStateID = 0;
     //0 = not horny
     //1 = horny
+    private float nextHornyAge = 0;
+    public float MatingInterval = 10;
+    public float MatingDuration = 3;
+    private float duration = 0;
+    public GameObject OffspringType;
     public float timer = 0;
     public float runTimer = 0;
     public Cd_FieldGeneration currField;
     public Cd_PreySearch searchField;
+    public Cd_PreyMateSearch mateSearch;
     public Patrol wanderCode;
     public GameObject[] preyBorderList= new GameObject[4];
     //index legend:
@@ -53,7 +60,7 @@ public class Cd_PreyBetas : MonoBehaviour {
                             case 0://checkAgeToMate();
                                 wander();
                                 break;
-                            case 1://searchMate();
+                            case 1:searchMate();
                                 break;
                         }
                         break;
@@ -81,7 +88,9 @@ public class Cd_PreyBetas : MonoBehaviour {
         {
             HungerStateID = 0;
         }
-        //ageCheck here
+        //age always passes
+        age += Time.deltaTime * ageDepletionRate;
+        ageToMateCheck();
         //hornyCheck here
         if (detectSight|| detectSmell){
             DetectStateID = 1;
@@ -283,8 +292,42 @@ public class Cd_PreyBetas : MonoBehaviour {
                 }
             }
         }
+        if (collision.gameObject.tag == "Prey" && MateStateID == 1)
+        {
+            duration -= Time.deltaTime;
+            if (duration <= 0)
+            {//finished mating
+                duration = 0;
+                MateStateID = 0;
+                GameObject offspring = Instantiate(OffspringType);
+                offspring.GetComponentInChildren<Cd_PreyBetas>().age = 0;
+            }
+        }
     }
-
+    //start mating
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Prey" && MateStateID == 1)
+        {
+            duration = MatingDuration;
+        }
+    }
+    //checks if it's time to be horny
+    private void ageToMateCheck()
+    {
+        //sudah saatnya cari pasangan
+        if (age > nextHornyAge)
+        {
+            MateStateID = 1;
+            nextHornyAge += MatingInterval;
+        }
+    }
+    //find the closest mate
+    //method: expanding circle collider
+    private void searchMate()
+    {
+        mateSearch.searchMate();
+    }
     //activate food search mode
     private void searchFood()
     {
@@ -300,5 +343,11 @@ public class Cd_PreyBetas : MonoBehaviour {
             oldDir.y*Mathf.Cos(Mathf.Deg2Rad * -rotDegree) +
             oldDir.x*Mathf.Sin(Mathf.Deg2Rad * -rotDegree));
         return newDir;
+    }
+
+    //setter getters
+    public int getMateStateID()
+    {
+        return MateStateID;
     }
 }

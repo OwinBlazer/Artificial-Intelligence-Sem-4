@@ -296,6 +296,7 @@
     <Compile Include="Assets\Scripts\Cd_PreyBetas.cs" />
     <Compile Include="Assets\Scripts\Cd_PreyBorder.cs" />
     <Compile Include="Assets\Scripts\Cd_PreyDetect.cs" />
+    <Compile Include="Assets\Scripts\Cd_PreyMateSearch.cs" />
     <Compile Include="Assets\Scripts\EnemyRetreat.cs" />
     <Compile Include="Assets\Scripts\Patrol.cs" />
     <Compile Include="Assets\Scripts\Patrol2Point.cs" />

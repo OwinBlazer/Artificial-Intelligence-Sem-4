@@ -289,6 +289,7 @@
     <Compile Include="Assets\Cd_FieldGeneration.cs" />
     <Compile Include="Assets\Cd_PreySearch.cs" />
     <Compile Include="Assets\Cd_PreySpread.cs" />
+    <Compile Include="Assets\Scripts\ButtonClick.cs" />
     <Compile Include="Assets\Scripts\Cd_Cursor_Movement.cs" />
     <Compile Include="Assets\Scripts\Cd_Hero_Movement.cs" />
     <Compile Include="Assets\Scripts\Cd_MainGame.cs" />

@@ -37,6 +37,8 @@ public class Cd_Hero_Movement : MonoBehaviour {
 		if (distance<tempDist) {
 			rb.velocity = Vector2.zero;
 			distance = 0;
+            walk = false;
+            idle = true;
 		} else {
 			distance = Mathf.Pow (Mathf.Pow(transform.position.x - destination.x,2)+Mathf.Pow(transform.position.y - destination.y,2),0.5f);
 		}

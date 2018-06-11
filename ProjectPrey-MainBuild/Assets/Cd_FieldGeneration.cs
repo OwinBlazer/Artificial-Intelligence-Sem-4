@@ -23,7 +23,7 @@ public class Cd_FieldGeneration : MonoBehaviour {
         {
             growth = 100;
         }
-        Color newColor = new Color(0, growth/100, 0);
+        Color newColor = new Color(1, 1, 1, growth / 100);
         sprite.color = newColor;
 	}
 

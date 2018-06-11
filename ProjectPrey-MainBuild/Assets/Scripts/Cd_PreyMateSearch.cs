@@ -22,11 +22,22 @@ public class Cd_PreyMateSearch : MonoBehaviour
             transform.localScale = new Vector2(1, 1);
         }
     }
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Prey" && col.gameObject != Self)
+        if (!nearestMate)
         {
-            nearestMate = col.gameObject;
+            if (col.gameObject.tag == "Prey" && col.gameObject != Self)
+            {
+                nearestMate = col.gameObject;
+            }
+        }
+        else {
+            if (col.gameObject.tag == "Prey" && col.gameObject!= Self && col.gameObject.GetComponent<Cd_PreyBetas>().MateStateID==1)
+            {
+                if(Vector2.Distance(new Vector2(transform.position.x,transform.position.y), new Vector2(col.gameObject.transform.position.x, col.gameObject.transform.position.y))
+                    <Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(nearestMate.transform.position.x, nearestMate.transform.position.y)))
+                nearestMate = col.gameObject;
+            }
         }
     }
     public void searchMate()
@@ -42,6 +53,7 @@ public class Cd_PreyMateSearch : MonoBehaviour
         else
         {
             transform.localScale += new Vector3(Time.deltaTime, Time.deltaTime, Time.deltaTime);
+            prey.rb.velocity = prey.rb.velocity / 2;
         }
     }
 }

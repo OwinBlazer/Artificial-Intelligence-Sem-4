@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cd_PreyBetas : MonoBehaviour {
+    public GameObject All;
+    public Cd_MainGame eventSys;
     public GameObject mainBody;
     public GameObject player;
     public float speed=1;
@@ -46,6 +48,8 @@ public class Cd_PreyBetas : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         rb=mainBody.GetComponent<Rigidbody2D>();
+        eventSys.enemyCount++;
+        nextHornyAge += MatingInterval;
 	}
     private void Update()
     {
@@ -105,6 +109,18 @@ public class Cd_PreyBetas : MonoBehaviour {
                 runTimer = 0;
                 DetectStateID = 0;
             }
+        }
+
+        //natural death Triggers
+        if (age > 100)
+        {
+            eventSys.enemyCount--;
+            Destroy(gameObject);
+        }
+        if (hunger <= -20)
+        {
+            eventSys.enemyCount--;
+            Destroy(gameObject);
         }
     }//Update End
 
@@ -281,7 +297,8 @@ public class Cd_PreyBetas : MonoBehaviour {
         if (collision.gameObject.tag == "Field")
         {
             currField = collision.GetComponent<Cd_FieldGeneration>();
-            if (HungerStateID==2&&searchField.target.getGrowth()>30&&currField==searchField.target)
+            if (HungerStateID==2&&searchField.target.getGrowth()>
+                30&&currField==searchField.target)
             {
                 currField.eatTile(30);
                 hunger += 50;
@@ -301,6 +318,9 @@ public class Cd_PreyBetas : MonoBehaviour {
                 MateStateID = 0;
                 GameObject offspring = Instantiate(OffspringType);
                 offspring.GetComponentInChildren<Cd_PreyBetas>().age = 0;
+                offspring.GetComponentInChildren<Cd_PreyBetas>().MateStateID = 0;
+                offspring.GetComponentInChildren<Cd_PreyBetas>().eventSys = eventSys;
+                eventSys.enemyCount++ ;
             }
         }
     }

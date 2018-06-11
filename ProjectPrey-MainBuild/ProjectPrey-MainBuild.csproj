@@ -292,6 +292,7 @@
     <Compile Include="Assets\Scripts\ButtonClick.cs" />
     <Compile Include="Assets\Scripts\Cd_Cursor_Movement.cs" />
     <Compile Include="Assets\Scripts\Cd_Hero_Movement.cs" />
+    <Compile Include="Assets\Scripts\Cd_HeroMain.cs" />
     <Compile Include="Assets\Scripts\Cd_MainGame.cs" />
     <Compile Include="Assets\Scripts\Cd_PointerScript.cs" />
     <Compile Include="Assets\Scripts\Cd_PreyBetas.cs" />

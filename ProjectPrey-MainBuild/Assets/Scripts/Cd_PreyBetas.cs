@@ -115,12 +115,12 @@ public class Cd_PreyBetas : MonoBehaviour {
         if (age > 100)
         {
             eventSys.enemyCount--;
-            Destroy(gameObject);
+            Destroy(All);
         }
         if (hunger <= -20)
         {
             eventSys.enemyCount--;
-            Destroy(gameObject);
+            Destroy(All);
         }
     }//Update End
 

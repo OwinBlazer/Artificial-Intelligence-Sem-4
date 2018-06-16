@@ -22,7 +22,7 @@ public class Cd_PreySearch : MonoBehaviour {
             temp = collision.GetComponent<Cd_FieldGeneration>();
             if (target)
             {
-                if (temp.getGrowth() > target.getGrowth() && target.getGrowth() < 50)
+                if (temp.getGrowth() > target.getGrowth()+30 && target.getGrowth() < 50)
                 {
                     target = temp;
                     transform.localScale = new Vector3(1, 1, 1);

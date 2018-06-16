@@ -287,6 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Cd_FieldGeneration.cs" />
+    <Compile Include="Assets\Cd_MainMenu.cs" />
     <Compile Include="Assets\Cd_PreySearch.cs" />
     <Compile Include="Assets\Cd_PreySpread.cs" />
     <Compile Include="Assets\Scripts\ButtonClick.cs" />

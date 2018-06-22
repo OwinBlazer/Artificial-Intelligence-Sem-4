@@ -12,7 +12,10 @@ public class ButtonClick : MonoBehaviour {
             Application.Quit();
             Debug.Log("App quit");
         }
-        SceneManager.LoadScene(level);
+        else
+        {
+            SceneManager.LoadScene(level);
+        }
     }
     
 }

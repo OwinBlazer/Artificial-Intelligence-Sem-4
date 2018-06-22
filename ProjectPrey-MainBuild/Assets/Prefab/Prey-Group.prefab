@@ -68,6 +68,9 @@ GameObject:
   - component: {fileID: 4938964937653214}
   - component: {fileID: 58077250168135686}
   - component: {fileID: 114136163241136132}
+  - component: {fileID: 60844110613710062}
+  - component: {fileID: 114506572925040790}
+  - component: {fileID: 114656515275363754}
   m_Layer: 0
   m_Name: Prey-Sight
   m_TagString: Untagged
@@ -199,8 +202,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4810364955174360}
-  - component: {fileID: 58512972699693952}
   - component: {fileID: 114013171977957574}
+  - component: {fileID: 60662557487561100}
+  - component: {fileID: 114974708923835810}
   m_Layer: 0
   m_Name: Prey-Smell
   m_TagString: Untagged
@@ -234,6 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4672531388341480}
   - component: {fileID: 212598754815071268}
+  - component: {fileID: 114638648139971100}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -425,7 +430,7 @@ Transform:
   m_GameObject: {fileID: 1882809926472382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4124040262226562}
   m_RootOrder: 0
@@ -602,21 +607,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15620758
---- !u!58 &58512972699693952
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1777438844944680}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!58 &58791513096216614
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -632,6 +622,62 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!60 &60662557487561100
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777438844944680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.02142924, y: 1.3317058}
+      - {x: -0.43288153, y: 0.90361977}
+      - {x: -0.13521248, y: -0.1626832}
+      - {x: 0.14304513, y: -0.17003883}
+      - {x: 0.39583892, y: 0.9525599}
+--- !u!60 &60844110613710062
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237580716417354}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.008007944, y: -0.26868665}
+      - {x: 0.3671338, y: 1.6615365}
+      - {x: -0.27865773, y: 1.662161}
 --- !u!61 &61438835044599536
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -818,6 +864,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84241134f96e134c92a554bea7656ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114506572925040790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237580716417354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fc8c3d6a454b146a8c4db262dd7923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prey: {fileID: 114059182788546652}
+--- !u!114 &114638648139971100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882809926472382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fc8c3d6a454b146a8c4db262dd7923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prey: {fileID: 114059182788546652}
+--- !u!114 &114656515275363754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237580716417354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5555a785668e4e743bddbf3588dd7e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeCycle: {fileID: 0}
 --- !u!114 &114670486146428680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -858,10 +940,10 @@ MonoBehaviour:
   beta: {fileID: 114059182788546652}
   startWaitTime: 1
   moveSpot: {fileID: 4302962667955054}
-  minX: -5.76
-  maxX: 5.76
-  minY: -4.21
-  maxY: 4.11
+  minX: -3.9
+  maxX: 3.7
+  minY: -3.9
+  maxY: 3.3
 --- !u!114 &114752200974602820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -886,6 +968,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84241134f96e134c92a554bea7656ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114974708923835810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777438844944680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a4119585b691b43aed3d6287e35349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wind: {fileID: 0}
 --- !u!212 &212598754815071268
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -920,7 +1014,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: fb64b43f6b53a7f428057d08f52728c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

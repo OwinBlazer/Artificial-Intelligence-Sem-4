@@ -72,6 +72,7 @@ public class Cd_PreyBetas : MonoBehaviour {
                         searchFood();
                         break;
                     case 2://is handled in OnTriggerEnter2D down below
+                        searchFood();
                         break;
                 }
                 break;
@@ -302,7 +303,7 @@ public class Cd_PreyBetas : MonoBehaviour {
             {
                 currField.eatTile(30);
                 hunger += 50;
-                Debug.Log("FieldID is " + currField.gameObject.name);
+                //Debug.Log("FieldID is " + currField.gameObject.name);
                 if (searchField.target.getGrowth() < 30)
                 {
                     searchField.target = null;

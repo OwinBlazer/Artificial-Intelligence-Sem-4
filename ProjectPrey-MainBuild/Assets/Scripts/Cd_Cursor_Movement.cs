@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cd_Cursor_Movement : MonoBehaviour {
-	public GameObject sprite;
+	public GameObject targetCoord;
 	// Use this for initialization
 
 	void Start () {

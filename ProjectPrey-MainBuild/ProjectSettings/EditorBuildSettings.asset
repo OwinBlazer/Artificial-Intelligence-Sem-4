@@ -11,3 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/TryOut.unity
     guid: 1a801de7f98fbd84485e8952fae04a24
+  - enabled: 1
+    path: Assets/Scene/Credits.unity
+    guid: 121e27b135c48f8439e75f6a367adbed
+  - enabled: 1
+    path: Assets/Scene/HowToPlay.unity
+    guid: 766c6ce481f1d254fa17122fbb419db1
+  - enabled: 1
+    path: Assets/Scene/Result.unity
+    guid: 458ff350270a179408e100e2ef0f637d
+  m_configObjects: {}
